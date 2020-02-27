@@ -13,9 +13,9 @@ $ pip -e .
 Assume that intended system for opening a valve dependent on price of electricity and the temperature in the environment.
 
 Assume that the fuzzy set for the temperature looks like this:
-[Temperature](images/temperature.png)
+![Temperature](images/temperature.png)
 And assume that the fuzzy set for the electricity price looks like this:
-[Electricity cost](images/electrisity_cost.png)
+![Electricity cost](images/electrisity_cost.png)
 This is implemented like this in this module:
 ``` python
 >>> import python_fuzzy_system as fuzzy
