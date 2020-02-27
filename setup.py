@@ -6,7 +6,7 @@ with open("README.md") as fd:
 
 setup(
         name='Python_fuzzy_systems',
-        version='0.0.1',
+        version='0.0.2',
         description='A fuzzy system for python with fuzzy reasoning and classification.',
         long_description=long_description,
         long_description_content_type="text/markdown",
