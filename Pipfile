@@ -9,8 +9,8 @@ pytest = ">=3.7"
 [packages]
 python-fuzzy-systems = {editable = true,path = "."}
 numpy = "*"
-matplolib = "*"
-matplotlib = "*"
+fuzzy-systems = {editable = true,path = "."}
+gnuplotlib = "*"
 
 [requires]
 python_version = "3.8"

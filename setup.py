@@ -5,12 +5,12 @@ with open("README.md") as fd:
     long_description = fd.read()
 
 setup(
-        name='Python_fuzzy_systems',
-        version='0.0.2',
+        name='fuzzy_systems',
+        version='0.0.3',
         description='A fuzzy system for python with fuzzy reasoning and classification.',
         long_description=long_description,
         long_description_content_type="text/markdown",
-        py_modules=["python_fuzzy_system"],
+        py_modules=["fuzzy_system"],
         package_dir={'':'src'},
         classifiers=[
             "Programming Language :: Python :: 3",

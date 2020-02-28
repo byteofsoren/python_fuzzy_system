@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fccb2d632f752c00a394621ab0c8bfad5f5af39c1ce9c15259f5246dad75e2b1"
+            "sha256": "0f76566c2bbfe872e4603b28f9cbb9ce13e9840dd95e04b47ea2c34e84f86117"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,17 @@
         ]
     },
     "default": {
+        "fuzzy-systems": {
+            "editable": true,
+            "path": "."
+        },
+        "gnuplotlib": {
+            "hashes": [
+                "sha256:df552ac5167fbcf898eeacb8d61bc2a93b67120951d7cbb1da706ba2573838b3"
+            ],
+            "index": "pypi",
+            "version": "==0.32"
+        },
         "numpy": {
             "hashes": [
                 "sha256:1786a08236f2c92ae0e70423c45e1e62788ed33028f94ca99c4df03f5be6b3c6",
@@ -42,6 +53,12 @@
             ],
             "index": "pypi",
             "version": "==1.18.1"
+        },
+        "numpysane": {
+            "hashes": [
+                "sha256:c4b53987aec2d51475e7f87b32045cde4409746a971da5ad65bb3cae53530bd4"
+            ],
+            "version": "==0.21"
         },
         "python-fuzzy-systems": {
             "editable": true,
