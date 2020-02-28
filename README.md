@@ -5,9 +5,8 @@ Based on the lecture's given by Ning Xiong at Märlardalens University.
 
 # Installation.
 ```
-$ git clone https://github.com/byteofsoren/python_fuzzy_system.git
-$ cd python_fuzzy_system
-$ pip -e .
+pip install fuzzy_system
+
 ```
 # Basic usage
 Assume that intended system for opening a valve dependent on price of electricity and the temperature in the environment.

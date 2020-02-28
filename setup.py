@@ -7,6 +7,9 @@ with open("README.md") as fd:
 setup(
         name='fuzzy_systems',
         version='0.0.3',
+        url="https://github.com/byteofsoren/python_fuzzy_system",
+        author="Magnus Sörensen",
+        author_email="byteofsoren@gmail.com",
         description='A fuzzy system for python with fuzzy reasoning and classification.',
         long_description=long_description,
         long_description_content_type="text/markdown",
@@ -18,6 +21,6 @@ setup(
             "Programming Language :: Python :: 3.7",
             "Programming Language :: Python :: 3.8",
             "License :: OSI Approved :: MIT License",
-            "Operating System :: OS independent",
+            "Operating System :: OS Independent",
             ]
         )

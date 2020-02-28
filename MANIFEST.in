@@ -1,0 +1,6 @@
+include *.lock
+include *.py
+include LICENSE
+include Pipfile
+recursive-include images *.png
+recursive-include src *.py
