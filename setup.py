@@ -6,7 +6,7 @@ with open("README.md") as fd:
 
 setup(
         name='fuzzy_systems',
-        version='0.0.3',
+        version='0.1.0',
         url="https://github.com/byteofsoren/python_fuzzy_system",
         author="Magnus Sörensen",
         author_email="byteofsoren@gmail.com",
