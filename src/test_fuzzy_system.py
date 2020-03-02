@@ -1,5 +1,5 @@
 import pytest
-import python_fuzzy_system as fuzzy
+import fuzzy_system as fuzzy
 import numpy as np
 
 
