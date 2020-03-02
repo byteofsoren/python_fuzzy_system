@@ -1,6 +1,7 @@
-# python_fuzzy_system
+# Fuzzy system
 Just a other python fuzzy rule-based system and reasoning package.
 Based on the lecture's given by Ning Xiong at Märlardalens University.
+Writen and implmented by @byteofsoren.
 
 
 # Installation.

@@ -76,7 +76,7 @@ class fuzzy_member():
         elif isinstance(other, (float,int,complex)):
             return lambda x: other + self.fire(x)
 
-    def polt(self,terminal=True, xpad=[-1,1], ypad=[-0.2,1.2]):
+    def plot(self,terminal=True, xpad=[-1,1], ypad=[-0.2,1.2]):
         """ Plots the fuzzy_member to ether the terminal or gui
             terminal=True plots the fuzzy_member to terminal else gui.
             xpad = [-1,1] adds x padding to the plots so that it prints niser
