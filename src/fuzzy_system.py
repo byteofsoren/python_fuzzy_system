@@ -37,6 +37,7 @@ class fuzzy_member():
         self.points = None
         self._shape = None
         self._linear= None
+        self._fire = None
         pass
 
     def fire(x:float):
@@ -57,9 +58,15 @@ class fuzzy_member():
                 R1(x) => min(cold.fire(x),cheep.fire(x))
         """
         if isinstance(other, fuzzy_member):
-            return lambda x: np.min([other.fire(x), self.fire(x)])
-        elif isinstance(other, (float,int,complex)):
-            return lambda x: other * self.fire(x)
+            return lambda : np.min([other._fire, self._fire])
+        elif callable(other):
+            return lambda : np.min([other(), self._fire])
+
+    def __repr__(self):
+        return lambda : self._fire
+
+    def __radd__(self,other):
+        return self.__add__(other)
 
     def __add__(self,other):
         """ Aaddition is the rule OR funcion
@@ -72,9 +79,9 @@ class fuzzy_member():
                 R1(x) => max(cold.fire(x),cheep.fire(x))
         """
         if isinstance(other, fuzzy_member):
-            return lambda x: np.max([other.fire(x), self.fire(x)])
-        elif isinstance(other, (float,int,complex)):
-            return lambda x: other + self.fire(x)
+            return lambda : np.max([other._fire, self._fire])
+        elif callable(other):
+            return lambda : np.max([other(), self._fire])
 
     def plot(self,terminal=True, xpad=[-1,1], ypad=[-0.2,1.2]):
         """ Plots the fuzzy_member to ether the terminal or gui
@@ -98,7 +105,7 @@ class fuzzy_member_pointlist(fuzzy_member):
     """
 
     def __init__(self, points:list, filename:str=None, inf=[-10e10,10e10]):
-        #super(fuzzy_member_Trapezoid, self).__init__()
+        super(fuzzy_member_pointlist, self).__init__()
         self.points = np.array(points)
         self._shape = np.shape(self.points)
         if filename == None:
@@ -160,7 +167,8 @@ class fuzzy_member_pointlist(fuzzy_member):
         # The linear equaiton can be calculated by [k,m]*[[x,1]].T => y=kx+m
         # However the [k,m] can be more then one row thus calculating the
         # Value for every line in that segment.
-        return equations@X
+        self._fire = equations@X
+        return self._fire
 
 
 
