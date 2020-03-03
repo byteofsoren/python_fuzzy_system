@@ -28,21 +28,36 @@ def test_novalue():
 
 
 @pytest.mark.parametrize(
-        "fire,fuzzy_and,fuzzy_or",[
-            (0,0,1),
-            # (10,0,1),
-            # (20,0,0),
+        "temp,price",[
+            (0,1),
+            (5,1),
+            (10,1),
+            (-10,1),
+            (20,-10),
         ]
 )
-def test_and(fire,fuzzy_and, fuzzy_or):
-    cold = fuzzy.fuzzy_member_pointlist([[0,1],[10,0]])
-    warm = fuzzy.fuzzy_member_pointlist([[0,0],[5,1],[15,1],[20,0]])
-    r1 = cold*warm + warm
-    r2 = warm + cold*warm
-    cold.fire(fire)
-    warm.fire(fire)
-    r2()
-    r1()
-
+def test_rule_creation(temp,price):
+    cold = fuzzy.fuzzy_member_pointlist([[5,1],[10,0]])
+    warm = fuzzy.fuzzy_member_pointlist([[5,0],[10,1]])
+    cheap = fuzzy.fuzzy_member_pointlist([[10,1],[15,0]])
+    expensive = fuzzy.fuzzy_member_pointlist([[10,0],[15,1]])
+    r1 = cold*cheap
+    r1b = cheap*cold
+    r2 = cold + cheap
+    r2b = cheap + cold
+    r3 = cold + warm*expensive
+    r3b = warm*expensive + cold
+    r5 = warm*r2
+    r5b = r2*warm
+    cold.fire(temp)
+    warm.fire(temp)
+    cheap.fire(price)
+    expensive.fire(price)
+    assert r1() == r1b()
+    assert r2() == r2b()
+    assert r3() == r3b()
+    assert r5() == r5b()
+    # assert np.round(r1(), 2)  == tc
+    # assert np.round(r2(), 2)  == tw
 
 

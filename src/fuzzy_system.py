@@ -47,6 +47,9 @@ class fuzzy_member():
         """
         return 0
 
+    def __rmul__(self,other):
+        return self.__mul__(other)
+
     def __mul__(self,other):
         """ Multiplication is the rule AND funcion
             let:
